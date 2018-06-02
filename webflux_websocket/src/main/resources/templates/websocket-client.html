@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -19,6 +21,11 @@
     clientWebSocket.onclose = function (error) {
         console.log("clientWebSocket.onclose", clientWebSocket, error);
         events("聊天会话关闭！");
+    }
+
+    clientWebSocket.onmessage=function (msg) {
+        console.log(msg);
+        document.querySelector(".chat").innerHTML += msg.data + "<br>";
     }
 
     function events(responseEvent) {
