@@ -6,7 +6,11 @@
 
     <groupId>com.jack</groupId>
     <artifactId>springcloud4</artifactId>
+    <packaging>pom</packaging>
     <version>pom</version>
+    <modules>
+        <module>consulapi</module>
+    </modules>
 
 
 </project>

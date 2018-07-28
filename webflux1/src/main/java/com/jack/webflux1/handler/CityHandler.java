@@ -76,7 +76,7 @@ public class CityHandler {
      * @param id
      * @return
      */
-    public Mono<Object> deleteCity(Long id) {
+    public Mono<Long> deleteCity(Long id) {
         return Mono.create(cityMonoSink -> cityMonoSink.success(cityRepository.deleteCity(id)));
     }
 
