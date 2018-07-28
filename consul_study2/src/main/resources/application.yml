@@ -5,7 +5,7 @@ spring:
       port: 8500
       discovery:
         #healthCheckPath: ${management.contextPath}/health
-        healthCheckPath: /health
+        #healthCheckPath: /health
         healthCheckInterval: 15s
         instance-id: consul2
         enabled: true
@@ -14,3 +14,9 @@ spring:
     name: consul2
 server:
   port: 8082
+
+management:
+     endpoints:
+       web:
+         exposure:
+           include: '*'

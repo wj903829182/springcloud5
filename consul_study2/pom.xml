@@ -53,10 +53,11 @@
 		</dependency>
 
 		<!--consul中健康检查需要用到actuator，不添加会check failing-->
-		<!--<dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>-->
+
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
