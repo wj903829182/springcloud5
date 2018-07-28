@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    consul:
+      host: 47.98.112.71
+      port: 8500
+      discovery:
+        #注释掉使用默认的健康检查url：/actuator/health
+        #healthCheckPath: ${management.contextPath}/health
+        #healthCheckPath: /health
+        healthCheckInterval: 15s
+        instance-id: consul3
+        enabled: true
+      enabled: true
+  application:
+    name: consul3
+server:
+  port: 8083
