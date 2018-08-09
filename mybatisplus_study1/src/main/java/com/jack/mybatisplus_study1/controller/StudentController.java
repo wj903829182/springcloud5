@@ -87,7 +87,7 @@ public class StudentController extends ApiController{
      */
     @GetMapping("/name/{name}")
     public List<Student> getSudentByName(@PathVariable("name") String name){
-        QueryWrapper queryWrapper = new QueryWrapper();
+        QueryWrapper<Student> queryWrapper = new QueryWrapper<Student>();
         queryWrapper.eq("name",name);
         List<Student> rs = studentService.selectList(queryWrapper);
         return rs;
