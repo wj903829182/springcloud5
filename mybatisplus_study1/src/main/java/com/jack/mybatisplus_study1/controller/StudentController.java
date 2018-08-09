@@ -1,12 +1,14 @@
 package com.jack.mybatisplus_study1.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.jack.mybatisplus_study1.entity.Student;
 import com.jack.mybatisplus_study1.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Wrapper;
 import java.util.List;
 
 /**
@@ -78,6 +80,18 @@ public class StudentController extends ApiController{
         return studentService.selectById(id);
     }
 
+    /**
+     * 通过指定条件查询学生
+     * @param name
+     * @return
+     */
+    @GetMapping("/name/{name}")
+    public List<Student> getSudentByName(@PathVariable("name") String name){
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("name",name);
+        List<Student> rs = studentService.selectList(queryWrapper);
+        return rs;
+    }
 
 }
 
