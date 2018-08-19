@@ -1,7 +1,6 @@
 package com.jack.springboot_version.controller.v1;
 
 import com.jack.springboot_version.annotation.ApiVersion;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

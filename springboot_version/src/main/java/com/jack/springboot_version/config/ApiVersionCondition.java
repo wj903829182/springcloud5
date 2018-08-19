@@ -78,7 +78,5 @@ public class ApiVersionCondition implements RequestCondition<ApiVersionCondition
         return apiVersion;
     }
 
-    public void setApiVersion(int apiVersion) {
-        this.apiVersion = apiVersion;
-    }
+
 }
