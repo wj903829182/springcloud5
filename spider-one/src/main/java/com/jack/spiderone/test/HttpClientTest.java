@@ -254,7 +254,7 @@ public class HttpClientTest {
         System.out.println("状态码为:"+httpResponse.getStatusLine().getStatusCode());
         //获取结果，html
         String result = EntityUtils.toString(httpResponse.getEntity(),"gbk");
-        //输出结果
+        //输出结果,请求的结果
         System.out.println(result);
 
     }
