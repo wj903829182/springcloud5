@@ -29,6 +29,7 @@ public class URLConnectionTest {
         // 但可以通过在 URL 上调用 openConnection() 方法创建一个连接对象
         URL url = new URL("http://www.w3school.com.cn/b.asp");
         URLConnection conn = url.openConnection();
+
     }
 
     /**

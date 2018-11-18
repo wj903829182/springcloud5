@@ -94,6 +94,27 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!--一款开源的 Java 语言的 HTML 文档解析器，支持以 XPath 的方式提取 HTML 中的元素https://mvnrepository.com/artifact/net.sourceforge.htmlcleaner/htmlcleaner -->
+		<dependency>
+			<groupId>net.sourceforge.htmlcleaner</groupId>
+			<artifactId>htmlcleaner</artifactId>
+			<version>2.22</version>
+		</dependency>
+
+
+		<!--对 HTML 进行有效信息搜索和提取的一款 Java 工具，但该工具已长时间不维护了 https://mvnrepository.com/artifact/org.htmlparser/htmlparser -->
+		<dependency>
+			<groupId>org.htmlparser</groupId>
+			<artifactId>htmlparser</artifactId>
+			<version>2.1</version>
+		</dependency>
+
+		<!--阿里json的json处理数据 https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.50</version>
+		</dependency>
 
 
 		<dependency>
@@ -101,6 +122,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
