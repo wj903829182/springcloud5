@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>hello-starter</artifactId>
+    <version>1.0.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,9 +25,9 @@
         </dependency>
     </dependencies>
 
-    <build>
+    <!--<build>
         <finalName>spring-boot-hello-start</finalName>
-    </build>
+    </build>-->
 
 
 </project>
