@@ -17,6 +17,7 @@ import org.apache.shiro.subject.Subject;
 public class IniRealmTest {
 
     public static void iniRealmTest1(){
+        //配置文件中的用户权限信息，文件在类路径下
         IniRealm iniRealm = new IniRealm("classpath:user.ini");
 
         //1,构建SecurityManager环境
