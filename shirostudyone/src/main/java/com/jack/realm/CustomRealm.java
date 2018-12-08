@@ -6,8 +6,10 @@ import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.util.ByteSource;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -32,7 +34,11 @@ public class CustomRealm extends AuthorizingRealm {
      * 使用代码块初始化数据
      */
     {
-        userMap.put("jack", "123456");
+        //userMap.put("jack", "123456");
+        //密码是123456的md5值
+        //userMap.put("jack", "e10adc3949ba59abbe56e057f20f883e");
+        //密码是123456的md5值,盐是jack
+        userMap.put("jack", "66cb87e4e66a825d10cf4227e0e82eee");
         super.setName("customRealm");
     }
     /**
@@ -94,6 +100,8 @@ public class CustomRealm extends AuthorizingRealm {
             return null;
         }
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(username,password,"customRealm");
+        //设置盐的值
+        authenticationInfo.setCredentialsSalt(ByteSource.Util.bytes("jack"));
         return authenticationInfo;
     }
 
@@ -104,5 +112,14 @@ public class CustomRealm extends AuthorizingRealm {
      */
     private String getPasswordByUsername(String username) {
         return userMap.get(username);
+    }
+
+    public static void main(String[] args) {
+        //md5值
+        //Md5Hash md5Hash = new Md5Hash("123456");
+
+        //md5加盐
+        Md5Hash md5Hash = new Md5Hash("123456","jack");
+        System.out.println("123456的md5值="+md5Hash.toString());
     }
 }

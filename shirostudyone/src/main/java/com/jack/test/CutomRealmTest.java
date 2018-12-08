@@ -3,6 +3,7 @@ package com.jack.test;
 import com.jack.realm.CustomRealm;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.DefaultSecurityManager;
 import org.apache.shiro.realm.text.IniRealm;
 import org.apache.shiro.subject.Subject;
@@ -29,6 +30,15 @@ public class CutomRealmTest {
         DefaultSecurityManager defaultSecurityManager = new DefaultSecurityManager();
         //设置Realm
         defaultSecurityManager.setRealm(customRealm);
+
+        //进行加密
+        HashedCredentialsMatcher matcher = new HashedCredentialsMatcher();
+        //采用mdf加密
+        matcher.setHashAlgorithmName("md5");
+        //设置加密次数
+        matcher.setHashIterations(1);
+        customRealm.setCredentialsMatcher(matcher);
+
 
         //2,主体提交认证请求
         SecurityUtils.setSecurityManager(defaultSecurityManager);
@@ -80,7 +90,7 @@ public class CutomRealmTest {
     }
 
     public static void main(String[] args) {
-        //cutomRealmTest1();
-        cutomRealmTest2();
+        cutomRealmTest1();
+        //cutomRealmTest2();
     }
 }
