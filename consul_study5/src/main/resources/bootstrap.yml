@@ -1,0 +1,41 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: consul5
+  cloud:
+    consul:
+    #配置consul服务器的host
+      host: localhost
+      #配置端口
+      port: 8500
+      config:
+      #配置默认文件名
+        default-context: ${spring.application.name}
+        #是否启用consul配置
+        enabled: true
+        #配置文件格式
+        format: YAML
+        #配置基本文件，默认值config
+        prefix: jack
+        #配置文件名，默认data
+        data-key: data
+      discovery:
+      #是否启用服务发现
+        enabled: true
+        #配置健康检查路径
+        health-check-path: /actuator/health
+        #配置健康检查时间间隔
+        health-check-interval: 15s
+        #配置实例id
+        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        #配置服务注册
+        register: true
+        #服务停止时取消注册，http://www.imooc.com/article/286883?block_id=tuijian_wz
+        deregister: true
+        #表示注册时使用ip而不是hostname
+        prefer-ip-address: true
+        #健康检查失败多长时间取消注册
+        health-check-critical-timeout: 30s
+  profiles:
+    active: dev
