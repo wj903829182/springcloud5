@@ -9,6 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * 参考：https://blog.csdn.net/yp090416/article/details/81587110
+ * http://www.imooc.com/article/286883?block_id=tuijian_wz
  */
 @SpringBootApplication
 @EnableDiscoveryClient
