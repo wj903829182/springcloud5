@@ -10,6 +10,9 @@
     <version>pom</version>
     <modules>
         <module>consulapi</module>
+        <module>hellostarter</module>
+        <module>shirostudyone</module>
+        <module>shirostudywebtwo</module>
     </modules>
 
 

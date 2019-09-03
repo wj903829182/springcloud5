@@ -1,18 +1,18 @@
 package com.jack.consul4;
 
-import com.jack.consul4.config.StudentConfig;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
+/**
+ * 参考：https://blog.csdn.net/yp090416/article/details/81587110
+ */
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-
 public class Consul4Application implements CommandLineRunner {
 
 	@Value("${name}")
