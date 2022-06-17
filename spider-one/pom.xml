@@ -113,7 +113,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.50</version>
+			<version>1.2.83</version>
 		</dependency>
 
 		<!--操作excel工具包 https://mvnrepository.com/artifact/org.apache.poi/poi -->
